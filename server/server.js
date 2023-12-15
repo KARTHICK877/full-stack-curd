@@ -11,6 +11,62 @@ const port = 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
+
+// Configure MySQL connection
+// const db = mysql.createConnection({
+//   host: 'your_mysql_host',
+//   user: 'your_mysql_user',
+//   password: 'your_mysql_password',
+//   database: 'your_database_name'
+// });
+
+// db.connect();
+
+// // CREATE - Add a new message to the discussion
+// app.post('/api/discussion', (req, res) => {
+//   const { username, message } = req.body;
+//   const sql = 'INSERT INTO discussions (username, message) VALUES (?, ?)';
+//   db.query(sql, [username, message], (err, result) => {
+//     if (err) {
+//       console.error(err);
+//       res.status(500).json({ success: false, message: 'Error adding message' });
+//     } else {
+//       res.json({ success: true, message: 'Message added successfully' });
+//     }
+//   });
+// });
+
+// // READ - Get all messages in the discussion
+// app.get('/api/discussion', (req, res) => {
+//   const sql = 'SELECT * FROM discussions';
+//   db.query(sql, (err, result) => {
+//     if (err) {
+//       console.error(err);
+//       res.status(500).json({ success: false, message: 'Error getting messages' });
+//     } else {
+//       res.json({ success: true, discussions: result });
+//     }
+//   });
+// });
+
+// // DELETE - Remove a message from the discussion
+// app.delete('/api/discussion/:id', (req, res) => {
+//   const messageId = req.params.id;
+//   const sql = 'DELETE FROM discussions WHERE id = ?';
+//   db.query(sql, [messageId], (err, result) => {
+//     if (err) {
+//       console.error(err);
+//       res.status(500).json({ success: false, message: 'Error deleting message' });
+//     } else {
+//       res.json({ success: true, message: 'Message deleted successfully' });
+//     }
+//   });
+// });
+
+// -----  sry i not have time to work  my sql  that's why i use mongoose
+
+
+
 // Connect to the MongoDB database
 connectToDatabase();
 
@@ -106,5 +162,5 @@ app.post('/api/signup', async (req, res) => {
   });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is runnings on port ${port}`);
 });
