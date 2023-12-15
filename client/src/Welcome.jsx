@@ -8,14 +8,14 @@ function Welcome() {
     const discussionTimer = setTimeout(() => {
       // Redirect to Discussion page after 3 seconds
       navigate('/discussion');
-    }, 5000);
+    }, 7000);
 
     return () => clearTimeout(discussionTimer);
   }, [navigate]);
 
   return (
     <div>
-         <video src="./video/welcome.mp4" autoPlay loop muted></video>
+         <video className='welcome' src="./video/welcome.mp4" autoPlay loop muted></video>
      
       {/* Add any content you want to display on the welcome page */}
     </div>
