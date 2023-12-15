@@ -160,6 +160,9 @@ app.post('/api/signup', async (req, res) => {
       res.status(500).json({ success: false, message: 'Error signing up' });
     }
   });
+  app.get("/" , (req, res)=> {
+    res.send("welcome to my DISCUSSION BOARD !")
+  })
 
 app.listen(port, () => {
   console.log(`Server is runnings on port ${port}`);
