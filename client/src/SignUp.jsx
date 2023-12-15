@@ -22,7 +22,7 @@ const SignUp = () => {
     }),
     onSubmit: async (values) => {
       try {
-        const response = await axios.post('http://localhost:3001/api/signup', values);
+        const response = await axios.post('https://discuss-24w6.onrender.com/api/signup', values);
         console.log(response.data);
         navigate('/welcome');
       } catch (error) {

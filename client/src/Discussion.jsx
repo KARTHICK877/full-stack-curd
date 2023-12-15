@@ -19,7 +19,7 @@ function Discussion() {
 
   const fetchDiscussions = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/discussion');
+      const response = await axios.get('https://discuss-24w6.onrender.com/api/discussion');
       setDiscussions(response.data.discussions);
     } catch (error) {
       console.error('Error fetching discussions:', error);
@@ -33,7 +33,7 @@ function Discussion() {
     }
 
     try {
-      await axios.post('http://localhost:3001/api/discussion', { username });
+      await axios.post('https://discuss-24w6.onrender.com/api/discussion', { username });
       toast.success('User send successfully');
       setUsername('');
       fetchDiscussions();
@@ -50,7 +50,7 @@ function Discussion() {
     }
 
     try {
-      await axios.post('http://localhost:3001/api/discussion', { message });
+      await axios.post('https://discuss-24w6.onrender.com/api/discussion', { message });
       toast.success('Client send successfully');
       setMessage('');
       fetchDiscussions();
@@ -63,7 +63,7 @@ function Discussion() {
 
   const handleDeleteMessage = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/discussion/${id}`);
+      await axios.delete(`https://discuss-24w6.onrender.com/api/discussion/${id}`);
       toast.dark('deleted successfully');
       fetchDiscussions();
     } catch (error) {
@@ -79,7 +79,7 @@ function Discussion() {
 
   const handleEditUser = async () => {
     try {
-      await axios.put(`http://localhost:3001/api/discussion/${editingMessageId}`, { username });
+      await axios.put(`https://discuss-24w6.onrender.com/api/discussion/${editingMessageId}`, { username });
       toast.info('User edited successfully');
       fetchDiscussions();
       setEditingMessageId(null);
@@ -93,7 +93,7 @@ function Discussion() {
 
   const handleEditClient = async () => {
     try {
-      await axios.put(`http://localhost:3001/api/discussion/${editingMessageId}`, { message });
+      await axios.put(`https://discuss-24w6.onrender.com/api/discussion/${editingMessageId}`, { message });
       toast.info('Client edited successfully');
       fetchDiscussions();
       setEditingMessageId(null);
